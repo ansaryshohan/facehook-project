@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { actions } from "../actions";
+import ProfileInfo from "../components/profile/ProfileInfo";
+import ProfilePosts from "../components/profile/ProfilePosts";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useAxios } from "../hooks/useAxios";
 import useProfileContext from "../hooks/useProfileContext";
@@ -38,8 +40,12 @@ function ProfilePage() {
 
   return (
     <div>
-      welcome {state?.profileUser?.firstName} {state?.profileUser?.lastName}
-      <p>you have {state?.posts?.length} posts</p>
+      {/* profile info  */}
+      <ProfileInfo />
+      {/* divider */}
+      <div className="w-3/4 border-b border-[#3F3F3F] py-6 lg:py-8"></div>
+      {/* profile posts */}
+      <ProfilePosts />
     </div>
   );
 }

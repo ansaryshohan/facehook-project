@@ -30,6 +30,23 @@ export const profileReducer = (state, action) => {
         error: action.payload.error,
       };
     }
+    case actions.profile.PROFILE_DATA_EDITING: {
+      return {
+        ...state,
+        loading: false,
+        profileUser: action.payload,
+      };
+    }
+    case actions.profile.PROFILE_IMAGE_EDITING: {
+      return {
+        ...state,
+        loading: false,
+        profileUser: {
+          ...state.profileUser,
+          avatar: action.payload,
+        },
+      };
+    }
     default:
       return state;
   }
