@@ -1,9 +1,7 @@
-import Header from "../components/Header";
+import { useAuthContext } from "../hooks/useAuthContext";
 
-export default function HomePage(){
-    return (
-        <>
-        <Header/>
-        </>
-    );
+export default function HomePage() {
+  const { auth } = useAuthContext();
+  console.log(auth);
+  return <></>;
 }

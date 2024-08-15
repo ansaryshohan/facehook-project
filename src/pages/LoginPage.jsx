@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import loginImg from "../assets/images/auth_illustration.png";
-import LoginForm from "../components/LoginForm";
+import LoginForm from "../components/auth/LoginForm";
+
 
 export default function LoginPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-deepDark py-8">
       <div className="max-w-[1368px] flex-1">
         <div className="container grid items-center gap-8 lg:grid-cols-2">
+          {/* left side image and content div */}
           <div>
             <img
               className="mb-12 max-w-full max-lg:hidden"
@@ -23,6 +25,7 @@ export default function LoginPage() {
               </p>
             </div>
           </div>
+          {/* login form div */}
           <div className="card">
             <LoginForm />
             <div className="py-4 lg:py-6">
