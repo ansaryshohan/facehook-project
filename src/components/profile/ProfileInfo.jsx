@@ -1,3 +1,4 @@
+
 import useProfileContext from "../../hooks/useProfileContext";
 import ProfileBio from "./ProfileBio";
 import ProfileImage from "./ProfileImage";
@@ -15,8 +16,9 @@ const ProfileInfo = () => {
         <p className="leading-[231%] lg:text-lg">{state?.profileUser?.email}</p>
       </div>
       {/* bio section */}
-      <ProfileBio/>
-      
+      <ProfileBio />
+      {/* divider */}
+      <div className="w-3/4 border-b border-[#3F3F3F] py-6 lg:py-8"></div>
     </div>
   );
 };

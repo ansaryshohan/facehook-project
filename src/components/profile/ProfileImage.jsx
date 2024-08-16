@@ -14,6 +14,7 @@ const ProfileImage = () => {
     fileUploadRef.current.click();
     fileUploadRef.current.addEventListener("change", updateDisplayImage);
   };
+
   const updateDisplayImage = async () => {
     try {
       const formData = new FormData();
@@ -43,13 +44,19 @@ const ProfileImage = () => {
 
   return (
     <div className="relative mb-8 max-h-[180px] max-w-[180px] rounded-full lg:mb-11 lg:max-h-[218px] lg:max-w-[218px]">
-      <img
-        className="w-[180px] h-[180px] rounded-full object-cover object-center"
-        src={`${import.meta.env.VITE_SERVER_BASE_URL}/${
-          state?.profileUser?.avatar
-        }`}
-        alt={`${state?.profileUser?.firstName} ${state?.profileUser?.lastName}`}
-      />
+      {state?.profileUser?.avatar ? (
+        <img
+          className="w-[180px] h-[180px] rounded-full object-cover object-center"
+          src={`${import.meta.env.VITE_SERVER_BASE_URL}/${
+            state?.profileUser?.avatar
+          }`}
+          alt={`${state?.profileUser?.firstName} ${state?.profileUser?.lastName}`}
+        />
+      ) : (
+        <span className="text-7xl font-bold w-[180px] h-[180px] rounded-full bg-slate-500 grid place-content-center">
+          {state?.profileUser?.firstName[0].toUpperCase()}
+        </span>
+      )}
 
       <form onSubmit={handleFileSubmit}>
         <input

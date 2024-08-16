@@ -2,8 +2,8 @@ import { useState } from "react";
 import { actions } from "../../actions";
 import CloseIcon from "../../assets/icons/close.svg";
 import EditIcon from "../../assets/icons/edit.svg";
-import { useAxios } from "../../hooks/useAxios";
 import useProfileContext from "../../hooks/useProfileContext";
+import { useAxios } from "../../hooks/useAxios";
 
 const ProfileBio = () => {
   const { state, dispatch } = useProfileContext();

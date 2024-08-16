@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 import ProfileContextProvider from "../../contexts/ProfileContextProvider";
-import { useAuthContext } from "../../hooks/useAuthContext";
 import Header from "../header/Header";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const PrivateRoute = () => {
   const { auth } = useAuthContext();

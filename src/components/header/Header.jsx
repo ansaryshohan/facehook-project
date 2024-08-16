@@ -41,11 +41,17 @@ export default function Header() {
               <span className="text-lg font-medium lg:text-xl">
                 {user.firstName}
               </span>
-              <img
-                className="h-[32px] w-[32px] lg:h-[44px] lg:w-[44px] rounded-full object-cover object-centeri"
-                src={`${import.meta.env.VITE_SERVER_BASE_URL}/${user.avatar}`}
-                alt=""
-              />
+              {user?.avatar ? (
+                <img
+                  className="h-[32px] w-[32px] lg:h-[44px] lg:w-[44px] rounded-full object-cover object-center"
+                  src={`${import.meta.env.VITE_SERVER_BASE_URL}/${user.avatar}`}
+                  alt="User photo"
+                />
+              ) : (
+                <span className="text-xl font-bold lg:text-xl h-[32px] w-[32px] lg:h-[44px] lg:w-[44px] rounded-full bg-slate-400 grid place-content-center">
+                  {auth?.user?.firstName[0].toUpperCase()}
+                </span>
+              )}
             </Link>
           </button>
         </div>
